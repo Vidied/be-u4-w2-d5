@@ -123,6 +123,36 @@ public class Main {
     }
   }
 
+  while (true) {
+    try {
+      System.out.println("Cambia il prezzo a un gioco");
+      System.out.println("Inserisci l'id in alternativa scrivi esci per uscire");
+      String input = scanner.next();
+
+      if(input.equals("esci")) {
+        System.out.println("Uscita dalla funzione di modifica prezzi");
+        break;
+      }
+
+      int giocoDaModificare = Integer.parseInt(input);
+
+      if (!libreriaSteam.getCollezione().containsKey(giocoDaModificare))  {
+        throw new Exception("Id: " + giocoDaModificare + " non presente");
+      }
+
+      System.out.println("Inserisci il nuovo prezzo per il gioco");
+      String inputPrezzo = scanner.next();
+      double nuovoPrezzo = Double.parseDouble(inputPrezzo);
+
+
+      libreriaSteam.modificaGioco(giocoDaModificare, nuovoPrezzo);
+    } catch (NumberFormatException e) {
+      System.err.println("Attenzione! Inserisci solo numeri per la ricerca e scelta del nuovo prezzo");
+    } catch (Exception e) {
+      System.err.println("Errore: " + e.getMessage());
+    }
+  }
+
 
 
 

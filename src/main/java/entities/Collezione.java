@@ -35,9 +35,6 @@ public class Collezione {
   //ho scelto di cambiare solo il prezzo in quanto realisticamente parlando
   //in uno store ogni categoria rimane fissa e l'unico dato che può cambiare nel tempo è solo il prezzo
   public void modificaGioco (int idGioco, double nuovoPrezzo) throws Exception {
-    if (!collezione.containsKey(idGioco))  {
-      throw new Exception("Id: " + idGioco + " non presente");
-    }
 
     Gioco giocoDaAggiornare = collezione.get(idGioco);
 
@@ -72,5 +69,7 @@ public class Collezione {
         .filter(gioco -> gioco.getPrezzo() <= maxsoldi).toList();
   }
 
-
+  public Map<Integer, Gioco> getCollezione() {
+    return collezione;
+  }
 }
