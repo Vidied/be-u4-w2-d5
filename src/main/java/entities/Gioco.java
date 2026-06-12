@@ -11,6 +11,7 @@ public abstract class Gioco {
     private int anno;
     private int prezzo;
 
+    //Costruttore
     public Gioco (String title, int anno, int prezzo) {
         this.id = random.nextInt(10000, 100000);
         this.title = title;
@@ -18,7 +19,7 @@ public abstract class Gioco {
         this.prezzo = prezzo;
     }
 
-
+    //Getter
     public int getId() {
         return id;
     }
