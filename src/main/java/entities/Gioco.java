@@ -7,14 +7,14 @@ public abstract class Gioco {
     private static final Random random = new Random();
     //Attributi del gioco generale
     private int id;
-    private String title;
+    private String titolo;
     private int anno;
     private int prezzo;
 
     //Costruttore
-    public Gioco (String title, int anno, int prezzo) {
+    public Gioco (String titolo, int anno, int prezzo) {
         this.id = random.nextInt(10000, 100000);
-        this.title = title;
+        this.titolo = titolo;
         this.anno = anno;
         this.prezzo = prezzo;
     }
@@ -24,8 +24,8 @@ public abstract class Gioco {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitolo() {
+        return titolo;
     }
 
     public int getAnno() {
