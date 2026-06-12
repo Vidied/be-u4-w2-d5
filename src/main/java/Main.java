@@ -44,7 +44,7 @@ public class Main {
       libreriaSteam.aggGioco(t2);
 
       //Eseguo una seconda aggiunta per poter testare il messaggio di errore
-      libreriaSteam.aggGioco(g1);
+//      libreriaSteam.aggGioco(g1);
 
 
     } catch (Exception e) {
