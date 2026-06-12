@@ -48,8 +48,10 @@ public class Videogioco extends Gioco{
   @Override
   public String toString() {
     String oreMinuti = this.ore ? " ore" : " minuti";
-
-    return super.toString() +
+    return "Id del videogioco: " + getId() +
+        " titolo del videogioco: " + getTitolo() +
+        " anno di uscita del gioco" + getAnno() +
+        " prezzo: " + getPrezzo() + "€" +
         " piattaforma: " + piattaforma +
         " durata media di una partita: " + durataGioco + oreMinuti +
         " genere: " + genere;
