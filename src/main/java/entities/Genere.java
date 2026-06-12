@@ -17,5 +17,6 @@ public enum Genere {
     SPORT,
     SPARATUTTO,
     PRIMAPERSONA,
-    OPENWORD
+    OPENWORD,
+    MOBA
 }
