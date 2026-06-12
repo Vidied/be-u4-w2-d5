@@ -3,24 +3,34 @@ package entities;
 public class GiocoDaTavolo extends Gioco{
 
     //Attributi gioco da tavolo
-    private int numeroGiocatori;
+    private int numeroGiocatoriMinimo;
+    private int numeroGiocatoriMassimo;
     private int durataMediaPartita;
 
-    public GiocoDaTavolo (String titolo, int anno, int prezzo, int numeroGiocatori, int durataMediaPartita){
+    public GiocoDaTavolo (String titolo, int anno, int prezzo, int numeroGiocatoriMinimo, int numeroGiocatoriMassimo, int durataMediaPartita){
         super(titolo, anno, prezzo);
-        this.numeroGiocatori = numeroGiocatori;
+        this.numeroGiocatoriMinimo = numeroGiocatoriMinimo;
+        this.numeroGiocatoriMassimo = numeroGiocatoriMassimo;
         this.durataMediaPartita = durataMediaPartita;
     }
 
-    public int getNumeroGiocatori() {
-        return numeroGiocatori;
-    }
+  public int getNumeroGiocatoriMinimo() {
+    return numeroGiocatoriMinimo;
+  }
 
-    public void setNumeroGiocatori(int numeroGiocatori) {
-        this.numeroGiocatori = numeroGiocatori;
-    }
+  public void setNumeroGiocatoriMinimo(int numeroGiocatoriMinimo) {
+    this.numeroGiocatoriMinimo = numeroGiocatoriMinimo;
+  }
 
-    public int getDurataMediaPartita() {
+  public int getNumeroGiocatoriMassimo() {
+    return numeroGiocatoriMassimo;
+  }
+
+  public void setNumeroGiocatoriMassimo(int numeroGiocatoriMassimo) {
+    this.numeroGiocatoriMassimo = numeroGiocatoriMassimo;
+  }
+
+  public int getDurataMediaPartita() {
         return durataMediaPartita;
     }
 
