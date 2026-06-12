@@ -1,6 +1,8 @@
 import entities.Collezione;
 import entities.Genere;
+import entities.Gioco;
 import entities.Videogioco;
+import org.w3c.dom.ls.LSException;
 
 import java.security.CodeSigner;
 import java.sql.SQLOutput;
@@ -34,7 +36,10 @@ public class Main {
     try {
       System.out.println("Aggiungi un gioco: ");
       libreriaSteam.aggGioco(g1);
+      libreriaSteam.aggGioco(g2);
       libreriaSteam.aggGioco(g3);
+      libreriaSteam.aggGioco(g4);
+
       //Eseguo una seconda aggiunta per poter testare il messaggio di errore
       libreriaSteam.aggGioco(g1);
 
@@ -49,22 +54,53 @@ public class Main {
   while (true) {
     try {
       System.out.println("Scrivi l'Id di uno dei giochi per cercarlo! Scrivi 99 per uscire dalla ricerca :)");
-      int ricercaGiocoId = scanner.nextInt();
+      String input = scanner.next();
 
-      if(ricercaGiocoId == 99) {
+      if(input.equals("esci")) {
         System.out.println("Uscita dalla ricerca id");
         break;
       }
 
+      int ricercaGiocoId = Integer.parseInt(input);
+
       System.out.println("Ricerca del gioco con id: " + ricercaGiocoId);
       libreriaSteam.ricercaId(ricercaGiocoId);
-    } catch (java.util.InputMismatchException e) {
+    } catch (NumberFormatException e) {
       System.err.println("L'id è composto da soli numeri!");
-      scanner.next();
     } catch (Exception e) {
       System.err.println("Errore: " + e.getMessage());
     }
   }
+
+
+  while (true) {
+    try {
+      System.out.println("Filtra i giochi inserendo un soglia massima per il prezzo! Inserisci esci per uscire :)");
+      String input = scanner.next();
+
+      if(input.equals("esci")) {
+        System.out.println("Uscita dalla ricerca filtro");
+        break;
+      }
+
+      int maxSoldi = Integer.parseInt(input);
+
+
+      List<Gioco> giochiFiltrati =  libreriaSteam.ricercaSoldiMax(maxSoldi);
+
+      if (giochiFiltrati.isEmpty()) {
+        System.out.println("Errore, purtroppo non possediamo giochi sotto questa soglia");
+      } else {
+        System.out.println("I risultati del tuo filtraggio sono: ");
+        giochiFiltrati.forEach(System.out::println);
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+
+
 
 
 
