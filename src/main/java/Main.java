@@ -83,7 +83,7 @@ public class Main {
         break;
       }
 
-      int maxSoldi = Integer.parseInt(input);
+      double maxSoldi = Double.parseDouble(input);
 
 
       List<Gioco> giochiFiltrati =  libreriaSteam.ricercaSoldiMax(maxSoldi);
@@ -94,8 +94,10 @@ public class Main {
         System.out.println("I risultati del tuo filtraggio sono: ");
         giochiFiltrati.forEach(System.out::println);
       }
+    } catch (NumberFormatException e) {
+      System.err.println("Errore: deve essere inserito un numero!");
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      System.err.println("Errore: " + e.getMessage());
     }
   }
 
