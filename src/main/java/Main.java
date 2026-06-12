@@ -2,11 +2,6 @@ import entities.Collezione;
 import entities.Genere;
 import entities.Gioco;
 import entities.Videogioco;
-import org.w3c.dom.ls.LSException;
-
-import java.security.CodeSigner;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +9,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
+    //Zona dedita per i videogiochi
     Collezione libreriaSteam = new Collezione();
 
     Videogioco g1 = new Videogioco( "League Of Legends", 2009, 0,"PC", 30, false,Genere.MOBA);
