@@ -39,9 +39,12 @@ public abstract class Gioco {
 
   @Override
   public String toString() {
+
+      String prezzo2 = (this.getPrezzo() == 0) ? "Free to Play" : this.getPrezzo() + "€";
+
     return "Id gioco: " + getId() +
         " gioco: " + getTitolo() +
         " anno uscita: " + getAnno() +
-        " prezzo: " + getPrezzo();
+        " prezzo: " + prezzo2;
   }
 }

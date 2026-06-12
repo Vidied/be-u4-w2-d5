@@ -5,12 +5,14 @@ public class Videogioco extends Gioco{
     //Attributi videogioco
     private String piattaforma;
     private int durataGioco;
+    private final boolean ore;
     private Genere genere;
 
-    public Videogioco (String titolo, int anno, int prezzo, String piattaforma, int durataGioco, Genere genere){
+    public Videogioco (String titolo, int anno, int prezzo, String piattaforma, int durataGioco, boolean ore, Genere genere){
         super(titolo, anno, prezzo );
         this.piattaforma = piattaforma;
         this.durataGioco = durataGioco;
+        this.ore = ore;
         this.genere = genere;
 
     }
@@ -39,11 +41,17 @@ public class Videogioco extends Gioco{
         this.genere = genere;
     }
 
+    public boolean isOre() {
+    return ore;
+  }
+
   @Override
   public String toString() {
+    String oreMinuti = this.ore ? " ore" : " minuti";
+
     return super.toString() +
         " piattaforma: " + piattaforma +
-        " durata media di una partita: " + durataGioco +
+        " durata media di una partita: " + durataGioco + oreMinuti +
         " genere: " + genere;
   }
 }
