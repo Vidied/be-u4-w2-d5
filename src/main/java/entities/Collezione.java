@@ -19,13 +19,15 @@ public class Collezione {
   }
 
   //Metodo per la rimozione di un gioco dalla collezione
-  public void rimGioco(Gioco gioco) throws Exception {
-    if (!collezione.containsKey(gioco.getId())) {
+  public void rimGioco(int rimuoviId) throws Exception {
+    if (!collezione.containsKey(rimuoviId)) {
       throw new Exception("Errore id gioco non presente");
     }
 
-    collezione.remove(gioco.getId(), gioco);
-    System.out.println(gioco.getTitolo() + " è stato rimosso!");
+    String giocoRimosso = collezione.get(rimuoviId).getTitolo();
+
+    collezione.remove(rimuoviId);
+    System.out.println(giocoRimosso + " è stato rimosso!");
   }
 
   //Metodo per stampare tutta la collezione

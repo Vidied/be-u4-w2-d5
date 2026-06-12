@@ -2,6 +2,8 @@ import entities.Collezione;
 import entities.Genere;
 import entities.Gioco;
 import entities.Videogioco;
+
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
@@ -92,6 +94,30 @@ public class Main {
       }
     } catch (NumberFormatException e) {
       System.err.println("Errore: deve essere inserito un numero!");
+    } catch (Exception e) {
+      System.err.println("Errore: " + e.getMessage());
+    }
+  }
+
+  while (true){
+    try {
+      System.out.println("Al momento la tua libreria steam contiene: ");
+      libreriaSteam.stampaCollezione();
+      System.out.println("Rimuovi i giochi inserendo il loro id! Inserisci esci per uscire :)");
+      String input = scanner.next();
+
+      if(input.equals("esci")) {
+        System.out.println("Uscita dalla funzione di rimozione giochi");
+        break;
+      }
+
+      int idRimosso = Integer.parseInt(input);
+
+
+      libreriaSteam.rimGioco(idRimosso);
+
+    } catch (NumberFormatException e) {
+      System.err.println("Attenzione! Devi inserire un id composto da soli numeri");
     } catch (Exception e) {
       System.err.println("Errore: " + e.getMessage());
     }
