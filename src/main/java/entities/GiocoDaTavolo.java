@@ -37,4 +37,13 @@ public class GiocoDaTavolo extends Gioco{
     public void setDurataMediaPartita(int durataMediaPartita) {
         this.durataMediaPartita = durataMediaPartita;
     }
+
+  @Override
+  public String toString() {
+    return "GiocoDaTavolo{" +
+        "numeroGiocatoriMinimo=" + numeroGiocatoriMinimo +
+        ", numeroGiocatoriMassimo=" + numeroGiocatoriMassimo +
+        ", durataMediaPartita=" + durataMediaPartita +
+        '}';
+  }
 }

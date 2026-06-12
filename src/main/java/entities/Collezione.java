@@ -1,5 +1,6 @@
 package entities;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +14,22 @@ public class Collezione {
     }
     collezione.put(gioco.getId(), gioco);
     System.out.println(gioco.getTitolo() + " aggiunto!");
+  }
+
+  public void stampaCollezione() {
+    if (collezione.isEmpty()) {
+      System.out.println("La tua libreria è vuota!");
+    } else {
+      collezione.values().forEach(System.out::println);
+    }
+  }
+
+  public void ricercaId (int cercaId) throws Exception {
+    if (!collezione.containsKey(cercaId)) {
+      throw new Exception("Attenzione id: " + cercaId + " inserito non presente!");
+    }
+    Gioco giocoTrovato = collezione.get(cercaId);
+    System.out.println("Risultato della ricerca: " + giocoTrovato);
   }
 
 
