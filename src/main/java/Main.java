@@ -6,9 +6,11 @@ import java.security.CodeSigner;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
     Collezione libreriaSteam = new Collezione();
 
@@ -44,8 +46,25 @@ public class Main {
     System.out.println("Libreria steam dopo gli aggiornamenti: ");
     libreriaSteam.stampaCollezione();
 
+  while (true) {
+    try {
+      System.out.println("Scrivi l'Id di uno dei giochi per cercarlo! Scrivi 99 per uscire dalla ricerca :)");
+      int ricercaGiocoId = scanner.nextInt();
 
+      if(ricercaGiocoId == 99) {
+        System.out.println("Uscita dalla ricerca id");
+        break;
+      }
 
+      System.out.println("Ricerca del gioco con id: " + ricercaGiocoId);
+      libreriaSteam.ricercaId(ricercaGiocoId);
+    } catch (java.util.InputMismatchException e) {
+      System.err.println("L'id è composto da soli numeri!");
+      scanner.next();
+    } catch (Exception e) {
+      System.err.println("Errore: " + e.getMessage());
+    }
+  }
 
 
 
