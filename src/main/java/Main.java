@@ -1,7 +1,4 @@
-import entities.Collezione;
-import entities.Genere;
-import entities.Gioco;
-import entities.Videogioco;
+import entities.*;
 
 import java.sql.SQLOutput;
 import java.util.DoubleSummaryStatistics;
@@ -11,6 +8,11 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+
+
+    //Zona per i giochi da tavolo
+    GiocoDaTavolo t1 = new GiocoDaTavolo("Monopoly", 1935, 25, 2, 6, 90);
+    GiocoDaTavolo t2 = new GiocoDaTavolo("Scrabble", 1948, 19.50, 2, 4, 45);
 
     //Zona dedita per i videogiochi
     Collezione libreriaSteam = new Collezione();
@@ -23,7 +25,7 @@ public class Main {
 
 
     //Creo una lista contenete i giochi disponibili
-    List<Videogioco> storeSteam = List.of(g1, g2, g3, g4);
+    List<Gioco> storeSteam = List.of(g1, g2, g3, g4, t1 ,t2);
     System.out.println("Giochi presenti nello store steam: " + storeSteam);
 
     //Stampo la mia collezione che al momento sarà vuota ma verrà popolata
@@ -38,6 +40,8 @@ public class Main {
       libreriaSteam.aggGioco(g2);
       libreriaSteam.aggGioco(g3);
       libreriaSteam.aggGioco(g4);
+      libreriaSteam.aggGioco(t1);
+      libreriaSteam.aggGioco(t2);
 
       //Eseguo una seconda aggiunta per poter testare il messaggio di errore
       libreriaSteam.aggGioco(g1);

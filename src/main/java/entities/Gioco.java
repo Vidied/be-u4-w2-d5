@@ -6,13 +6,13 @@ public abstract class Gioco {
     //Random static e final perchè viene usato per ogni generazione e non cambia
     private static final Random random = new Random();
     //Attributi del gioco generale
-    private int id;
-    private String titolo;
-    private int anno;
+    private final int id;
+    private final String titolo;
+    private final int anno;
     private double prezzo;
 
     //Costruttore
-    public Gioco (String titolo, int anno, int prezzo) {
+    public Gioco (String titolo, int anno, double prezzo) {
         this.id = random.nextInt(10000, 100000);
         this.titolo = titolo;
         this.anno = anno;
