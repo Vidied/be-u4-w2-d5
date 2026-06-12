@@ -40,10 +40,12 @@ public class GiocoDaTavolo extends Gioco{
 
   @Override
   public String toString() {
-    return "GiocoDaTavolo{" +
-        "numeroGiocatoriMinimo=" + numeroGiocatoriMinimo +
-        ", numeroGiocatoriMassimo=" + numeroGiocatoriMassimo +
-        ", durataMediaPartita=" + durataMediaPartita +
-        '}';
+    return "Id gioco: " + getId() +
+        " titolo gioco da tavola: " + getTitolo() +
+        " anno uscita gioco" + getAnno() +
+        " prezzo: " + getPrezzo() + "€" +
+        " numeroGiocatoriMinimo: " + numeroGiocatoriMinimo +
+        " numeroGiocatoriMassimo: " + numeroGiocatoriMassimo +
+        " durataMediaPartita: " + durataMediaPartita;
   }
 }
