@@ -9,7 +9,7 @@ public abstract class Gioco {
     private int id;
     private String titolo;
     private int anno;
-    private int prezzo;
+    private double prezzo;
 
     //Costruttore
     public Gioco (String titolo, int anno, int prezzo) {
@@ -32,11 +32,11 @@ public abstract class Gioco {
         return anno;
     }
 
-    public void setPrezzo(int prezzo) {
+    public void setPrezzo(double prezzo) {
       this.prezzo = prezzo;
     }
 
-  public int getPrezzo() {
+  public double getPrezzo() {
         return prezzo;
     }
 

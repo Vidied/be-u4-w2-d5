@@ -41,7 +41,11 @@ public class Collezione {
 
     Gioco giocoDaAggiornare = collezione.get(idGioco);
 
-    giocoDaAggiornare.
+    giocoDaAggiornare.setPrezzo(nuovoPrezzo);
+
+    System.out.println("Prezzo del gioc con id: " + idGioco + " | " +
+        giocoDaAggiornare.getTitolo() +
+        " è stato aggiornato con il nuovo prezzo di: " + nuovoPrezzo);
   }
 
   //Metodo per stampare tutta la collezione
