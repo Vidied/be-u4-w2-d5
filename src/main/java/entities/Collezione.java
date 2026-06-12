@@ -18,6 +18,16 @@ public class Collezione {
     System.out.println(gioco.getTitolo() + " aggiunto!");
   }
 
+  //Metodo per la rimozione di un gioco dalla collezione
+  public void rimGioco(Gioco gioco) throws Exception {
+    if (!collezione.containsKey(gioco.getId())) {
+      throw new Exception("Errore id gioco non presente");
+    }
+
+    collezione.remove(gioco.getId(), gioco);
+    System.out.println(gioco.getTitolo() + " è stato rimosso!");
+  }
+
   //Metodo per stampare tutta la collezione
   public void stampaCollezione() {
     if (collezione.isEmpty()) {
