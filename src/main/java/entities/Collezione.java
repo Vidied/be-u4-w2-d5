@@ -2,6 +2,7 @@ package entities;
 
 import java.security.spec.ECField;
 import java.sql.SQLOutput;
+import java.util.DoubleSummaryStatistics;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +68,11 @@ public class Collezione {
   public List<Gioco> ricercaSoldiMax (double maxsoldi) {
     return collezione.values().stream()
         .filter(gioco -> gioco.getPrezzo() <= maxsoldi).toList();
+  }
+
+  //Metodo per vedere le statistiche
+  public DoubleSummaryStatistics statisticheGenerali(){
+    return collezione.values().stream().mapToDouble(Gioco::getPrezzo).summaryStatistics();
   }
 
   public Map<Integer, Gioco> getCollezione() {

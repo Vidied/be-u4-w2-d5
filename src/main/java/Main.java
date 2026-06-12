@@ -4,6 +4,7 @@ import entities.Gioco;
 import entities.Videogioco;
 
 import java.sql.SQLOutput;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +52,7 @@ public class Main {
 
   while (true) {
     try {
-      System.out.println("Scrivi l'Id di uno dei giochi per cercarlo! Scrivi 99 per uscire dalla ricerca :)");
+      System.out.println("Scrivi l'Id di uno dei giochi per cercarlo! Scrivi esci per uscire dalla ricerca :)");
       String input = scanner.next();
 
       if(input.equals("esci")) {
@@ -152,6 +153,17 @@ public class Main {
       System.err.println("Errore: " + e.getMessage());
     }
   }
+
+    System.out.println("Eccole le statistiche della tua libreria!");
+    DoubleSummaryStatistics statistiche = libreriaSteam.statisticheGenerali();
+
+    if (statistiche.getCount() > 0) {
+      System.out.println("Il numero dei giochi presenti è di: " + statistiche.getCount());
+      System.out.println("Il gioco più costoso è di: " + statistiche.getMax());
+      System.out.println("La media dei prezzi dei giochi è di: " + statistiche.getAverage());
+    } else {
+      System.out.println("La libreria è vuota, nessuna statistica da dimostrare");
+    }
 
 
 
