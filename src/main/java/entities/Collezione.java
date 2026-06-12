@@ -1,5 +1,6 @@
 package entities;
 
+import java.security.spec.ECField;
 import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +29,19 @@ public class Collezione {
 
     collezione.remove(rimuoviId);
     System.out.println(giocoRimosso + " è stato rimosso!");
+  }
+
+  //Metodo per modificare il prezzo di un elemento,
+  //ho scelto di cambiare solo il prezzo in quanto realisticamente parlando
+  //in uno store ogni categoria rimane fissa e l'unico dato che può cambiare nel tempo è solo il prezzo
+  public void modificaGioco (int idGioco, double nuovoPrezzo) throws Exception {
+    if (!collezione.containsKey(idGioco))  {
+      throw new Exception("Id: " + idGioco + " non presente");
+    }
+
+    Gioco giocoDaAggiornare = collezione.get(idGioco);
+
+    giocoDaAggiornare.
   }
 
   //Metodo per stampare tutta la collezione

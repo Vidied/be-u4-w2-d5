@@ -32,7 +32,11 @@ public abstract class Gioco {
         return anno;
     }
 
-    public int getPrezzo() {
+    public void setPrezzo(int prezzo) {
+      this.prezzo = prezzo;
+    }
+
+  public int getPrezzo() {
         return prezzo;
     }
 
